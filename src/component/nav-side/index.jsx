@@ -19,7 +19,7 @@ class NavSide extends React.Component{
                     </li>
                     <li className="active">
                         <Link to="/product">
-                            <i className="fa fa-sitemap"></i> 
+                            <i className="fa fa-list"></i> 
                             <span>Products</span>
                             <span className="fa arrow"></span>
                          </Link>
@@ -34,7 +34,7 @@ class NavSide extends React.Component{
                     </li>
                     <li className="active">
                         <Link to="/order">
-                            <i className="fa fa-sitemap"></i> 
+                            <i className="fa fa-check-square-o"></i> 
                             <span>Orders</span>
                             <span className="fa arrow"></span>
                          </Link>
@@ -46,7 +46,7 @@ class NavSide extends React.Component{
                     </li>
                     <li className="active">
                         <Link to="/user">
-                            <i className="fa fa-sitemap"></i> 
+                            <i className="fa fa-user-o"></i> 
                             <span>Users</span>
                             <span className="fa arrow"></span>
                          </Link>
