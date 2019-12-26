@@ -45,7 +45,11 @@ class MUtil{
 	}
 	// error message
 	errorTips(errMsg) {
-		alert(errMsg || "There seems to be something wrong")
+		alert( errMsg || "There seems to be something wrong :(");
+	}
+
+	successTips(successMsg){
+		alert(successMsg || "Operation succeeds!");
 	}
 
 	setStorage(name, data){
@@ -75,6 +79,8 @@ class MUtil{
 	removeStorage(name){
 		window.localStorage.removeItem(name);
 	}
+
+
 }
 
 export default MUtil;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageTitle from 'component/page-title/index.jsx';
+import TableList from 'util/table-list/index.jsx';
 // import Pagination from 'rc-pagination';
 import MUtil        from 'util/mm.jsx'
 import User         from 'service/user-service.jsx'
@@ -13,8 +14,7 @@ class UserList extends React.Component{
         super(props);
         this.state = {
             list            : [],
-            pageNum         : 1,
-            firstLoading    : true
+            pageNum         : 1
         };
     }
     componentDidMount(){
@@ -22,13 +22,9 @@ class UserList extends React.Component{
     }
     loadUserList(){
         _user.getUserList(this.state.pageNum).then(res => {
-            this.setState(res, () => {
-            	this.setState({
-            		firstLoading  : false
-
-            	})
+            this.setState(res);
             	
-            });
+          
         }, errMsg => {
             this.setState({
                 list : []
@@ -45,51 +41,24 @@ class UserList extends React.Component{
     }
 	render(){
 		let listBody = this.state.list.map((user, index) => {
-						return (<tr key={index}>
-									<td>{user.id}</td>
-									<td>{user.username}</td>
-									<td>{user.email}</td>
-									<td>{user.phone}</td>
-									<td>{new Date(user.createTime).toLocaleString()}</td>
+				return (<tr key={index}>
+							<td>{user.id}</td>
+							<td>{user.username}</td>
+							<td>{user.email}</td>
+							<td>{user.phone}</td>
+							<td>{new Date(user.createTime).toLocaleString()}</td>
 
-								</tr>
-								);
-						});
-		let listError = (
-				<tr >
-					<td colSpan="5" className="text-center">{
-						this.state.firstLoading ? "loading...."  : 'can not find data :('
-					}
-
-					</td>
-				</tr>
-			);
-
-		let tableBody = this.state.list.length > 0 ? listBody :  listError
+						</tr>
+						);
+				});
 		return (
 			// <p className="error">wrong page:)</p>
 			<div id="page-wrapper">
 				<PageTitle title="User List"/>
-				<div className="row">
-					<div className="col-md-12">
-						<table className="table tables-striped table-bordered">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>User Name</th>
-									<th>Email</th>
-									<th>Phone Number</th>
-									<th>Registeration Date</th>
-								</tr>
-							</thead>
-							<tbody>
-								{tableBody}
-								
-							</tbody>
-						</table>
-					</div>
-					
-				</div>
+						<TableList tableHeads={['ID', 'User Name', 'Email', 'Phone Number', 'Registeration Date']}>
+						{listBody}
+						</TableList>
+				
 				<Pagination current={this.state.pageNum} 
 							total={this.state.total} 
 							onChange={(pageNum) => this.onPageNumChange(pageNum)}/>
