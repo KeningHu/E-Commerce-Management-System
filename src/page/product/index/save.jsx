@@ -140,7 +140,7 @@ class ProductSave extends React.Component{
 	render() {
 		return (
 			<div id="page-wrapper" >
-				<PageTitle title="Add product" />
+				<PageTitle title={this.state.id ? 'Edit product' : 'Add product'} />
 				<div className="form-horizontal">
 					<div className="form-group">
 						<label className="col-md-2 control-label">Product Name</label>
@@ -151,8 +151,8 @@ class ProductSave extends React.Component{
 									name="name"
 									value={this.state.name}
 									onChange={(e) => this.onValueChange(e)}/>
+						</div>
 					</div>
-				</div>
 				<div className="form-group">
 					<label  className="col-md-2 control-label">Description</label>
 					<div className="col-md-5">

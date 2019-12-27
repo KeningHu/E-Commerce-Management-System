@@ -101,6 +101,7 @@ class Product{
     /*
     * about  category
     */
+    // get category list by using parent categoryId
     getCategoryList(parentCategoryId){
     	return _mm.request({
             type    : 'post',
@@ -111,9 +112,24 @@ class Product{
         });
     }
 
+    // add a new category
+    saveCategory(category){
+        return _mm.request({
+            type    : 'post',
+            url     : '/manage/category/add_category.do',
+            data    : category
+        });
 
+    }
+    // update category name
+    updateCategoryName(category){
+        return _mm.request({
+            type    : 'post',
+            url     : '/manage/category/set_category_name.do',
+            data    : category
+        });
 
-
+    }
 
 }
 
