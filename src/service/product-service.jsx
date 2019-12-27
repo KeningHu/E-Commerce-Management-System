@@ -128,7 +128,6 @@ class Product{
             url     : '/manage/category/set_category_name.do',
             data    : category
         });
-
     }
 
 }
