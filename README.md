@@ -38,7 +38,7 @@
 
 **Login Page:**
 
-<img src="/Users/hukening/Desktop/login-page.png" alt="login-page" style="zoom:25%;" />
+![login-page](readimg/login-page.png)
 
 **Home Page:**
 
