@@ -38,13 +38,13 @@
 
 **Login Page:**
 
-![login-page](readimg/login-page.png)
+![login-page](readImg/login-page.png)
 
 **Home Page:**
 
 Navigation bar is on the left side.
 
-<img src="/Users/hukening/Documents/develop/muke/do/E-Commerce_management_system/home-page.png" alt="home-page" style="zoom: 25%;" />
+![home-page](readImg/home-page.png)
 
 
 
@@ -56,11 +56,11 @@ For each product, you have three operations: view, edit, change status.
 
 (The other three pages(category management, order management, users management) are nealy same as this page in format and development process, just different in their specific functions and data management)
 
-<img src="/Users/hukening/Desktop/product-list.png" alt="product-list" style="zoom:25%;" />
+![product-list](readImg/product-list.png)
 
 **Add Product:**
 
-<img src="/Users/hukening/Desktop/add-product.png" alt="add-product" style="zoom:25%;" />
+![add-product](readImg/add-product.png)
 
 
 
@@ -76,7 +76,9 @@ Develop Tools:
 
 Run:
 
-command line:    yarn run dev
+```
+$ yarn run dev
+```
 
 
 
